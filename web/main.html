@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Send email</title>
+	<link rel="icon" href="mail-send.png" type="image/x-icon">
+</head>
+<body>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="script.js"></script>
+
+	<div class="main">
+		<h1 class="title">SEND EMAIL</h1>
+
+		<input type="email" id="send_from" placeholder="your email">
+		<input type="password" id="passwd" placeholder="your password">
+		<br>
+		<input type="email" id="send_to" placeholder="email to send"> <br>
+		<div class="message">
+			<input type="text" id="subject" placeholder="message subject"> <br>
+			<textarea placeholder="your message" id="message" cols="30" rows="10"></textarea>
+		</div>
+		<button id="send_data">SEND</button>
+	</div>
+	<script type="text/javascript" src="eel.js"></script>
+	<script>
+
+		async function responseServer() {
+			let login = document.getElementById("send_from").value;
+			let password = document.getElementById("passwd").value;
+			let sendTo = document.getElementById("send_to").value;
+			let subject = document.getElementById("subject").value;
+			let msg = document.getElementById("message").value;
+			await eel.send_message(login, password, subject, msg, sendTo)();
+			alert("Message sent succesfully ;)");
+		}
+
+		$("#send_data").on("click", function () {
+			responseServer();
+			/*login = document.getElementById("send_from").value = ""; 
+			password =  document.getElementById("passwd").value = "";
+			sendTo = document.getElementById("send_to").value = "";
+			subject = docu"";
+			msg = "";*/
+			location.reload();
+		});
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+body {
+	font-family: "Arial", sans-serif;
+}
+
+div.message {
+	margin-top: 20px;
+}
+
+.main {
+	margin-top: 40px;
+	margin-left: 200px;
+
+}
+
+#send_from, #passwd, #send_to, #subject{
+	height: 40px;
+	width: 300px;
+	font-size: 25px;
+}
+
+#send_to {
+	margin-top: 15px;
+}
+
+#passwd {
+	margin-top: 25px;
+}
+
+#message {
+	margin-top: 10px;
+	font-size: 25px;
+}
+
+#send_data {
+	margin-top: 30px;
+	margin-left: 80px;
+	height: 30px;
+	width: 80px;
+	border-radius: 0px;
+}
